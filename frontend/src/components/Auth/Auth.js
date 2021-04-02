@@ -1,64 +1,72 @@
 import React,{useState,useEffect} from 'react';
 import classes from './Auth.module.css';
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
 
-const Reg = ({register,login,state,setState,registerUsername,setRegisterUsername,registerPassword,setRegisterPassword,confirmPassword,setConfirmPassword,loginPassword,setLoginPassword,loginUsername,setLoginUsername})=>{
-    return (
-    <div>
-    {!state?
-        <div className={classes.register}
-        >
-            <input
-                placeholder="username"
-                onChange={e=> setRegisterUsername(e.target.value)}
-            >
-            </input>
+const Reg = ({register,login,state,redirect,setState,registerUsername,setRegisterUsername,registerPassword,setRegisterPassword,confirmPassword,setConfirmPassword,loginPassword,setLoginPassword,loginUsername,setLoginUsername})=>{
+    const [redirectRoute,setRedirect] = useState("/app");
+    if (redirect) {
+        return <Redirect to={redirectRoute} />
+    }
+    else{
+        return (
+            <div>
+        
+            {!state?
+                <div className={classes.register}
+                >
+                    <input
+                        placeholder="username"
+                        onChange={e=> setRegisterUsername(e.target.value)}
+                    >
+                    </input>
 
-            <input
-                placeholder="password"
-                type="password"
-                onChange={e=> setRegisterPassword(e.target.value)}
-            >
-            </input>
+                    <input
+                        placeholder="password"
+                        type="password"
+                        onChange={e=> setRegisterPassword(e.target.value)}
+                    >
+                    </input>
 
-            <input
-                placeholder="confirm password"
-                type="password"
-                onChange={e=> setConfirmPassword(e.target.value)}
-            >
-            </input>
+                    <input
+                        placeholder="confirm password"
+                        type="password"
+                        onChange={e=> setConfirmPassword(e.target.value)}
+                    >
+                    </input>
 
-            <button
-            onClick={register}
-            >submit
-            </button>
-            <h3>Already Have an account?<button onClick={()=>{setState(true)}}>Click Here</button></h3>
-        </div> :
+                    <button
+                    onClick={register}
+                    >submit
+                    </button>
+                    <h3>Already Have an account?<button onClick={()=>{setState(true)}}>Click Here</button></h3>
+                </div> :
 
-        <div className={classes.login}
-        >
-            <input
-                placeholder="username"
-                onChange={e=> setLoginUsername(e.target.value)}
-            >
-            </input>
+                <div className={classes.login}
+                >
+                    <input
+                        placeholder="username"
+                        onChange={e=> setLoginUsername(e.target.value)}
+                    >
+                    </input>
 
-            <input
-                placeholder="password"
-                type="password"
-                onChange={e=> setLoginPassword(e.target.value)}
-            >
-            </input>
+                    <input
+                        placeholder="password"
+                        type="password"
+                        onChange={e=> setLoginPassword(e.target.value)}
+                    >
+                    </input>
 
-            <button
-            onClick={login}
-            >submit
-            </button><h3>Don't have an account?<button onClick={()=>{setState(false)}}>Click Here</button></h3>
-
-        </div>}
-        </div>
+                    <button
+                    onClick={login}
+                    >submit
+                    </button><h3>Don't have an account?<button onClick={()=>{setState(false)}}>Click Here</button></h3>
+                    
+                </div>}
+            </div>
         )
+    }
 }
 
 export default function Auth() {
@@ -68,8 +76,8 @@ export default function Auth() {
           [registerPassword,setRegisterPassword] = useState(""),
           [confirmPassword,setConfirmPassword] = useState(""),
           [loginPassword,setLoginPassword] = useState(""),
-          [state,setState] = useState(false);
-    
+          [state,setState] = useState(false),
+          [redirect,setRedirect] = useState(false);
 
     const register = ()=>{
         axios({
@@ -102,6 +110,8 @@ export default function Auth() {
         })
         .then(res=>{
             console.log(res);
+            if (res.data === "SUCCESS") setRedirect(true);
+
         })
         .catch(err=>{
             console.log(err);
@@ -123,10 +133,10 @@ export default function Auth() {
                 loginPassword = {loginPassword}
                 register = {register}
                 login={login}
+                redirect={redirect}
                 state={state}
                 setState={setState}
             />
-            
         </div>
     )
 }

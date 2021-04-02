@@ -30,7 +30,7 @@ router.post("/login",(req,res,next)=>{
         else{
             req.logIn(user,err=>{
                 if (err) console.log(err);
-                res.send("Successfully Authenticated");
+                res.send("SUCCESS");
             })
         }
     })(req,res,next)
