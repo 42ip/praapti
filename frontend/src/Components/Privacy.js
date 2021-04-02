@@ -4,7 +4,7 @@ export default class Privacy extends Component {
     render() {
         return (
             <div>
-                <p>Privacy Policy</p>
+                <h1>Privacy Policy</h1>
             </div>
         );
     }
