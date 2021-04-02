@@ -1,10 +1,20 @@
 import './App.css';
-import Navbar from './Components/Navbar.js';
-import Footer from './Components/Footer'
-import Home  from './Components/Home';
-import Privacy from './Components/Privacy';
+import Auth from './components/Auth/Auth';
+import React,{useState} from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+import Navbar from './components/Navbar.js';
+import Footer from './components/Footer'
+import Home  from './components/Home';
+import Privacy from './components/Privacy';
 import {Component} from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+
 
 class App extends Component{
   render(){
@@ -14,13 +24,17 @@ class App extends Component{
       <header className="App-header">
         <Navbar/>
       </header>
+
         <Switch>
+        <Route exact path="/Reg">
+              <Auth/>
+            </Route>
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} /> 
         </Switch>
          <Footer/>
 
-    </div>
+      </div>
     </Router>
   );
   }
