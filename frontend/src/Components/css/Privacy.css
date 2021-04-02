@@ -1,0 +1,21 @@
+.privacy_container {
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+h2,
+h3 {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 2em;
+    line-height: 1.142857142857143em;
+    font-weight: 500;
+}
+
+.para1,
+.para2 {
+    font: 16px;
+    border: none;
+    margin: 25px 50px 75px 100px;
+    line-height: 1.2;
+}
