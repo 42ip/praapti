@@ -9,12 +9,37 @@ const mongoose = require("mongoose"),
       bodyParser = require("body-parser");
 
 
-      const app = express();
+const app = express();
 
-      //MiddleWare
-      app.use(express.json());
-      app.use(express.urlencoded({extended: true}));
+//MiddleWare
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-      app.listen(8080,()=>{
-        console.log("Nice ");
-      });
+app.use(cors({
+    origin : "http://localhost:3000",
+    credentials: true
+}))
+
+app.use(expressSession({
+    secret : "secretcode",
+    resave : true,
+    saveUninitialized: true
+}));
+app.use(cookieParser("secretcode"));
+
+//Routes
+app.post("/login", (req,res)=>{
+    console.log(req.body);
+});
+
+app.post("/register",(req,res)=>{
+    console.log(req.body);
+});
+
+app.get("/user",(req,res)=>{
+
+})
+
+app.listen(8080,()=>{
+    console.log("Nice ");
+});
