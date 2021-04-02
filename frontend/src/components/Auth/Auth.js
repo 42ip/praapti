@@ -44,7 +44,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                             className={classes.input}
                             placeholder="password"
                             type="password"
-                            onChange={e=> setRegisterPassword(e.target.value)}
+                            onChange={e=>setRegisterPassword(e.target.value)}
                         >
                         </input>
                     </div>
@@ -110,7 +110,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                      <div className={classes.inp}>
                         <label for="username">Username</label>
                         <input
-                            className={classes.input}
+                            className={`${classes.input} user`}
                             placeholder="username"
                             onChange={e=> setLoginUsername(e.target.value)}
                         >
@@ -120,9 +120,9 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     <div className={classes.inp}>
                     <label for="password">Password</label>
                         <input
-                            className={classes.input}
+                            className={`${classes.input} pass`}
                             placeholder="password"
-                            type="password"
+                            type="passwor"
                             onChange={e=> setLoginPassword(e.target.value)}
                         >
                         </input>
@@ -143,7 +143,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
     }
 }
 
-export default function Auth({setUser}) {
+export default function Auth() {
     //State
     const [registerUsername,setRegisterUsername] = useState(""),
           [loginUsername,setLoginUsername] = useState(""),
@@ -173,6 +173,10 @@ export default function Auth({setUser}) {
         })
         .then(res=>{
             console.log(res)
+            setState(true);
+            document.querySelector(`.user`).value="";
+            document.querySelector(`.pass`).value="";
+            
         })
         .catch(err=>{
             console.log(err);
@@ -180,6 +184,7 @@ export default function Auth({setUser}) {
     }
 
     const login = () => {
+        
         axios({
             method : 'post',
             data : {
@@ -193,7 +198,7 @@ export default function Auth({setUser}) {
             console.log(res);
             if (res.status === 200) {
                 localStorage.setItem("user",res.data.username);
-                localStorage.setITem("_id",res.data._id);
+                localStorage.setItem("_id",res.data._id);
                 setRedirect(true);
             }
         })
