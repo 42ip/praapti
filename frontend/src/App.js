@@ -1,6 +1,5 @@
 import './App.css';
 import Auth from './components/Auth/Auth';
-import Landing from './components/landing/Landing';
 import React,{useState} from "react";
 import {
   BrowserRouter as Router,
@@ -29,9 +28,6 @@ class App extends Component{
         <Switch>
         <Route exact path="/Reg">
               <Auth/>
-            </Route>
-            <Route exact path="/app">
-              <Landing/>
             </Route>
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} /> 
