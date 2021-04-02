@@ -6,6 +6,14 @@ body {
     background-color: #ddffbc;
 }
 
+.secondary_body{
+    min-height: 55vh;
+}
+
+.footer_fix{
+    min-height: 66vh;
+}
+
 .App-header {
     font-size: calc(10px + 2vmin);
     color: white;

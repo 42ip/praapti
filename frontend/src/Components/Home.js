@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default class Home extends Component {
     render() {
         return (
-        <div>
+        <div class="secondary_body">
          <div className="farmer">
             <img src={farmer} alt="farmer with his donkey"/>    
         </div>
