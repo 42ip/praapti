@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import classes from './Auth.module.css';
+import axios from 'axios';
+
 
 const Reg = ({register,login,state,setState,registerUsername,setRegisterUsername,registerPassword,setRegisterPassword,confirmPassword,setConfirmPassword,loginPassword,setLoginPassword,loginUsername,setLoginUsername})=>{
     return (
@@ -15,12 +17,14 @@ const Reg = ({register,login,state,setState,registerUsername,setRegisterUsername
 
             <input
                 placeholder="password"
+                type="password"
                 onChange={e=> setRegisterPassword(e.target.value)}
             >
             </input>
 
             <input
                 placeholder="confirm password"
+                type="password"
                 onChange={e=> setConfirmPassword(e.target.value)}
             >
             </input>
@@ -42,6 +46,7 @@ const Reg = ({register,login,state,setState,registerUsername,setRegisterUsername
 
             <input
                 placeholder="password"
+                type="password"
                 onChange={e=> setLoginPassword(e.target.value)}
             >
             </input>
@@ -64,6 +69,45 @@ export default function Auth() {
           [confirmPassword,setConfirmPassword] = useState(""),
           [loginPassword,setLoginPassword] = useState(""),
           [state,setState] = useState(false);
+    
+
+    const register = ()=>{
+        axios({
+            method : 'post',
+            data :{
+                username : registerUsername,
+                password : registerPassword,
+                confirm : confirmPassword
+            },
+            withCredentials : true,
+            url : 'http://localhost:8080/register'
+        })
+        .then(res=>{
+            console.log(res)
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
+
+    const login = () => {
+        axios({
+            method : 'post',
+            data : {
+                username : loginUsername,
+                password : loginPassword
+            },
+            withCredentials: true,
+            url : 'http://localhost:8080/login'
+        })
+        .then(res=>{
+            console.log(res);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
+
     return (
         <div className={classes.regcontainer}>
             <Reg
@@ -74,7 +118,11 @@ export default function Auth() {
                 confirmPassword={confirmPassword}
                 setConfirmPassword={setConfirmPassword}
                 loginUsername = {loginUsername}
+                setLoginUsername = {setLoginUsername}
+                setLoginPassword = {setLoginPassword}
                 loginPassword = {loginPassword}
+                register = {register}
+                login={login}
                 state={state}
                 setState={setState}
             />

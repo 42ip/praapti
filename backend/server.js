@@ -7,9 +7,19 @@ const mongoose = require("mongoose"),
       bcrypt = require('bcryptjs'),
       expressSession = require("express-session"),
       bodyParser = require("body-parser");
+      User = require("./Models/User");
+      homeRoutes = require('./Routes/homeRoutes');
+      router = express.Router();
 
 
 const app = express();
+
+mongoose.connect("mongodb+srv://Tirtharaj:pukai007@cluster0.t7zhe.mongodb.net/agrotech?retryWrites=true&w=majority",{
+    useNewUrlParser : true,
+    useUnifiedTopology : true
+}, ()=>{
+    console.log("connected to database");
+})
 
 //MiddleWare
 app.use(express.json());
@@ -26,19 +36,11 @@ app.use(expressSession({
     saveUninitialized: true
 }));
 app.use(cookieParser("secretcode"));
-
+app.use(passport.initialize());
+app.use(passport.session());
+require('./Config/passportConfig')(passport);
 //Routes
-app.post("/login", (req,res)=>{
-    console.log(req.body);
-});
-
-app.post("/register",(req,res)=>{
-    console.log(req.body);
-});
-
-app.get("/user",(req,res)=>{
-
-})
+app.use('/',homeRoutes);
 
 app.listen(8080,()=>{
     console.log("Nice ");
