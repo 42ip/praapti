@@ -163,7 +163,6 @@ export default function Auth({setUser}) {
             data :{
                 username : registerUsername,
                 password : registerPassword,
-                confirm : confirmPassword,
                 role : role,
                 address : address,
                 phone : phone,
