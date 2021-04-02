@@ -10,11 +10,17 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import Navbar from './components/Navbar.js';
+import Footer from './components/Footer'
+import Home  from './components/Home';
+import Privacy from './components/Privacy';
+import {Component} from 'react';
 
-function App() {
-  const [user,setUser] = useState("");
 
+class App extends Component{
+  render(){
   return (
+    <Router>
     <div className="App">
       <header className="App-header">
         <Router>
@@ -27,9 +33,18 @@ function App() {
             </Route>
           </Switch>
         </Router>
+        <Navbar/>
       </header>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/privacy" component={Privacy} /> 
+        </Switch>
+         <Footer/>
+
     </div>
+    </Router>
   );
+  }
 }
 
 export default App;

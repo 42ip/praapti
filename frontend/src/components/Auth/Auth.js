@@ -26,12 +26,14 @@ const Reg = ({register,login,state,redirect,setState,registerUsername,setRegiste
                 <div className={classes.register}
                 >
                     <input
+                        className={classes.input}
                         placeholder="username"
                         onChange={e=> setRegisterUsername(e.target.value)}
                     >
                     </input>
 
                     <input
+                        className={classes.input}
                         placeholder="password"
                         type="password"
                         onChange={e=> setRegisterPassword(e.target.value)}
@@ -39,6 +41,7 @@ const Reg = ({register,login,state,redirect,setState,registerUsername,setRegiste
                     </input>
 
                     <input
+                        className={classes.input}
                         placeholder="confirm password"
                         type="password"
                         onChange={e=> setConfirmPassword(e.target.value)}
@@ -46,6 +49,7 @@ const Reg = ({register,login,state,redirect,setState,registerUsername,setRegiste
                     </input>
 
                     <button
+                    className={classes.button}
                     onClick={register}
                     >submit
                     </button>
@@ -55,12 +59,14 @@ const Reg = ({register,login,state,redirect,setState,registerUsername,setRegiste
                 <div className={classes.login}
                 >
                     <input
+                        className={classes.input}
                         placeholder="username"
                         onChange={e=> setLoginUsername(e.target.value)}
                     >
                     </input>
 
                     <input
+                        className={classes.input}
                         placeholder="password"
                         type="password"
                         onChange={e=> setLoginPassword(e.target.value)}
