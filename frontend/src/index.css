@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  width:60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 25vh;
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  line-height: 30px;
+  text-align: left;
+  margin-left: 7%;
+}
+
+.button_container{
+  text-align: center;
+}
+.log{
+margin-right: 33%;
+margin-top: 3%;
+padding: 20px;
+border: 1px transparent;
+border-radius: 20px;
+  background-color: #52734D;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-shadow: 2px 2px gray;
+  box-shadow: 3px 3px 2px black;
+color: #ddffbc;
+transition: all 0.2s linear;
+}
+
+.log:hover{
+  box-shadow: 2px 2px 2px #000000;
+}
+.container div{
+  margin-right: 10%;
+}
+
