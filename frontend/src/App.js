@@ -23,25 +23,22 @@ class App extends Component{
     <Router>
     <div className="App">
       <header className="App-header">
-        <Router>
-          <Switch>
-            <Route exact path="/Reg">
+        <Navbar/>
+      </header>
+
+        <Switch>
+        <Route exact path="/Reg">
               <Auth/>
             </Route>
             <Route exact path="/app">
               <Landing/>
             </Route>
-          </Switch>
-        </Router>
-        <Navbar/>
-      </header>
-        <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} /> 
         </Switch>
          <Footer/>
 
-    </div>
+      </div>
     </Router>
   );
   }
