@@ -26,14 +26,20 @@ router.post("/login",(req,res,next)=>{
     console.log(req.body);
     passport.authenticate("local",(err,user,info)=>{
         if (err) throw err;
-        if (!user) res.send("No User Exists");
+        if (!user) res.status(201).send("No User Exists");
         else{
             req.logIn(user,err=>{
                 if (err) console.log(err);
-                res.send("SUCCESS");
+                console.log(req.user);
+                res.status(200).send(req.user);
             })
         }
     })(req,res,next)
 })
+
+router.get("/test", (req, res) => {
+    console.log(req.user)
+    res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
+  });
 
 module.exports = router;

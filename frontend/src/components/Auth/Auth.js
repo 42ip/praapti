@@ -10,6 +10,15 @@ const Reg = ({register,login,state,redirect,setState,registerUsername,setRegiste
         return <Redirect to={redirectRoute} />
     }
     else{
+        const getUser = () => {
+            axios({
+              method: "GET",
+              withCredentials: true,
+              url: "http://localhost:8080/test",
+            }).then((res) => {
+              console.log("USER is " +res.data.username);
+            });
+          };
         return (
             <div>
         
@@ -64,12 +73,13 @@ const Reg = ({register,login,state,redirect,setState,registerUsername,setRegiste
                     </button><h3>Don't have an account?<button onClick={()=>{setState(false)}}>Click Here</button></h3>
                     
                 </div>}
+                <button onClick={getUser}>Click</button>
             </div>
         )
     }
 }
 
-export default function Auth() {
+export default function Auth({setUser}) {
     //State
     const [registerUsername,setRegisterUsername] = useState(""),
           [loginUsername,setLoginUsername] = useState(""),
@@ -110,8 +120,11 @@ export default function Auth() {
         })
         .then(res=>{
             console.log(res);
-            if (res.data === "SUCCESS") setRedirect(true);
-
+            if (res.status === 200) {
+                localStorage.setItem("user",res.data.username);
+                localStorage.setITem("_id",res.data._id);
+                setRedirect(true);
+            }
         })
         .catch(err=>{
             console.log(err);

@@ -1,7 +1,7 @@
 import './App.css';
 import Auth from './components/Auth/Auth';
 import Landing from './components/landing/Landing';
-import React from "react";
+import React,{useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [user,setUser] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
