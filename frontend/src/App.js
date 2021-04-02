@@ -1,5 +1,5 @@
 import './App.css';
-import Auth from './components/Auth/Auth';
+import Auth from './Components/Auth/Auth';
 import React,{useState} from "react";
 import {
   BrowserRouter as Router,
@@ -9,10 +9,10 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import Navbar from './components/Navbar.js';
-import Footer from './components/Footer'
-import Home  from './components/Home';
-import Privacy from './components/Privacy';
+import Navbar from './Components/Navbar.js';
+import Footer from './Components/Footer'
+import Home  from './Components/Home';
+import Privacy from './Components/Privacy';
 import {Component} from 'react';
 
 
