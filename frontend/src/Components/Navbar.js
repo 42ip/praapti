@@ -7,8 +7,12 @@ export default class Navbar extends Component {
         return (
             <div class="navbar">
                 <img src={logo} alt="logo" />
-                <h6>Login</h6>
-                <h6>Sign Up</h6>
+                <button className="button-one">
+                 Login
+                </button>
+                <button className="button-two">
+                 Sign Up
+                </button>
             </div>
         );
     }
