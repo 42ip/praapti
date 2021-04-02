@@ -1,25 +1,25 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import classes from './Auth.module.css';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-import farmer from '../../images/farmer.png';
+// import farmer from '../../images/farmer.png';
 
 
 const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirect,setState,registerUsername,setRegisterUsername,registerPassword,setRegisterPassword,confirmPassword,setConfirmPassword,loginPassword,setLoginPassword,loginUsername,setLoginUsername})=>{
-    const [redirectRoute,setRedirect] = useState("/app");
+    const [redirectRoute] = useState("/app");
     if (redirect) {
         return <Redirect to={redirectRoute} />
     }
     else{
-        const getUser = () => {
-            axios({
-              method: "GET",
-              withCredentials: true,
-              url: "http://localhost:8080/test",
-            }).then((res) => {
-              console.log("USER is " +res.data.username);
-            });
-          };
+        // const getUser = () => {
+        //     axios({
+        //       method: "GET",
+        //       withCredentials: true,
+        //       url: "http://localhost:8080/test",
+        //     }).then((res) => {
+        //       console.log("USER is " +res.data.username);
+        //     });
+        //   };
         return (
             <div className={classes.topReg}>
         

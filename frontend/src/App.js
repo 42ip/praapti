@@ -1,13 +1,10 @@
 import './App.css';
 import Auth from './Components/Auth/Auth';
-import React,{useState} from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
 } from "react-router-dom";
 import Navbar from './Components/Navbar.js';
 import Footer from './Components/Footer'
