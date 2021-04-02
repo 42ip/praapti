@@ -1,12 +1,11 @@
 .footer {
     color: #000000;
     font-family: 'Times New Roman', Times, serif;
-    position: relative;
+    position: static;
     display: block;
-    bottom: 0;
     width: 100vw;
     text-align: center;
-    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .footer a {

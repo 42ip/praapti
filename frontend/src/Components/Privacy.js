@@ -5,6 +5,7 @@ export default class Privacy extends Component {
         return (
             <div>
                 <h1>Privacy Policy</h1>
+                <div class="footer_fix"></div>
             </div>
         );
     }
