@@ -19,7 +19,7 @@ function App() {
       <header className="App-header">
         <Router>
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/Reg">
               <Auth/>
             </Route>
             <Route exact path="/app">
