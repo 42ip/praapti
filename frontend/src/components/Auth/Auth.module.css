@@ -1,31 +1,29 @@
-.topReg{
+.topReg {
     margin: 2rem 0rem 0rem 0rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.inp{
+.inp {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
 }
 
-.inp>label{
+.inp>label {
     width: fit-content;
 }
 
-.img>img{
+.img>img {
     width: auto;
     height: 25vw;
     margin-right: 6rem;
-    
-    margin-top:4rem;
+    margin-top: 4rem;
 }
 
-.register, .login{
-    
+.register,
+.login {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -33,17 +31,17 @@
     align-items: center;
 }
 
-.login{
+.login {
     margin-top: 8rem;
 }
 
-.input{
+.input {
     width: 40rem;
     padding: 0.4rem;
     margin-bottom: 1rem;
 }
 
-.button{
+.button {
     width: 41rem;
     margin-top: 1rem;
     padding: 0.8rem;
@@ -55,12 +53,12 @@
     transition: 0.5s;
 }
 
-.button:hover{
+.button:hover {
     background-color: #3d6835;
     color: #a0da9b;
 }
 
-.but1{
+.but1 {
     border: none;
     background-color: transparent;
     color: #283825;
@@ -70,6 +68,6 @@
     outline: none;
 }
 
-.but1:hover{
+.but1:hover {
     color: #11310c;
 }

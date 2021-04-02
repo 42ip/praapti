@@ -7,9 +7,9 @@ export default class Footer extends Component{
     {
         return (
         <div className="footer">
-            <p>
             Copyright &#169; 2021 Yield. 
             &nbsp;
+            <p>
                 <Link to='/privacy' >
                     Privacy Policy
                 </Link>

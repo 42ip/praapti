@@ -24,7 +24,6 @@ class App extends Component{
       <header className="App-header">
         <Navbar/>
       </header>
-
         <Switch>
         <Route exact path="/Reg">
               <Auth/>
@@ -33,7 +32,6 @@ class App extends Component{
           <Route exact path="/privacy" component={Privacy} /> 
         </Switch>
          <Footer/>
-
       </div>
     </Router>
   );

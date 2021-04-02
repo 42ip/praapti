@@ -136,10 +136,8 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </button>
                     <p>Don't have an account?<button className={classes.but1} onClick={()=>{setState(false)}}>Click Here</button></p>
                     
-                </div>}
-                <div className={classes.img}>
-                    <img src={farmer}/>
-                </div>
+                    </div>
+                }
             </div>
         )
     }
