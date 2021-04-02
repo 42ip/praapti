@@ -122,7 +122,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                         <input
                             className={`${classes.input} pass`}
                             placeholder="password"
-                            type="passwor"
+                            type="password"
                             onChange={e=> setLoginPassword(e.target.value)}
                         >
                         </input>
