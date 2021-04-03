@@ -6,7 +6,7 @@ import {Redirect} from 'react-router-dom';
 
 
 const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirect,setState,registerUsername,setRegisterUsername,registerPassword,setRegisterPassword,confirmPassword,setConfirmPassword,loginPassword,setLoginPassword,loginUsername,setLoginUsername})=>{
-    const [redirectRoute] = useState("/app");
+    const [redirectRoute] = useState("/map");
     if (redirect) {
         return <Redirect to={redirectRoute} />
     }
@@ -27,7 +27,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                 <div className={classes.register}
                 >
                     <div className={classes.inp}>
-                        <label for="username">Username</label>
+                        <label htmlFor="username">Username</label>
                         <input
                             name="username"
                             className={classes.input}
@@ -38,7 +38,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </div>
 
                     <div className={classes.inp}>
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                         <input
                             name="password"
                             className={classes.input}
@@ -50,7 +50,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </div>
 
                     <div className={classes.inp}>
-                    <label for="confirm">Role</label>
+                    <label htmlFor="confirm">Role</label>
                         <input
                             name="role"
                             className={classes.input}
@@ -62,7 +62,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </div>
 
                     <div className={classes.inp}>
-                    <label for="address">Address Line 1</label>
+                    <label htmlFor="address">Address Line 1</label>
                         <input
                             name="address"
                             className={classes.input}
@@ -74,7 +74,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </div>
 
                     <div className={classes.inp}>
-                    <label for="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone Number</label>
                         <input
                             name="phone"
                             className={classes.input}
@@ -86,7 +86,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </div>
 
                     <div className={classes.inp}>
-                    <label for="aadhar">Aadhar</label>
+                    <label htmlFor="aadhar">Aadhar</label>
                         <input
                             name="aadhar"
                             className={classes.input}
@@ -108,7 +108,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                 <div className={classes.login}
                 >
                      <div className={classes.inp}>
-                        <label for="username">Username</label>
+                        <label htmlFor="username">Username</label>
                         <input
                             className={`${classes.input} user`}
                             placeholder="username"
@@ -118,7 +118,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     </div>
 
                     <div className={classes.inp}>
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                         <input
                             className={`${classes.input} pass`}
                             placeholder="password"
@@ -134,7 +134,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     onClick={login}
                     >Login
                     </button>
-                    <p>Don't have an account?<button className={classes.but1} onClick={()=>{setState(false)}}>Click Here</button></p>
+                    <p>Don't have an account?<button className={classes.but1} onClick={()=>{setState(false);document.querySelector(`.user`).value="";document.querySelector(`.pass`).value="";}}>Click Here</button></p>
                     
                     </div>
                 }

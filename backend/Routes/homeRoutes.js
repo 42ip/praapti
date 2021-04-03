@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const bcrypt = require("bcryptjs");
 const User = require('../Models/User');
+const Feature = require('../Models/FeatureCollection')
 
 
 router.post('/register', (req, res) => {
@@ -45,5 +46,22 @@ router.get("/test", (req, res) => {
     console.log(req.user)
     res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
 });
+
+
+router.post("/addFeatures",(req,res)=>{
+    const {type,features} = req.body;
+    const newFeat = new Feature({
+        type : type,
+        features : features
+    });
+    console.log(newFeat)
+    newFeat.save()
+    .then(()=>{
+        res.status(200).send("FeatureList Updated");
+    })
+    .catch(()=>{
+        res.status(200).send("Failed to save");
+    })
+})
 
 module.exports = router;
