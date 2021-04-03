@@ -8,8 +8,11 @@ We have 2 roles in our portal:
 2. The Workers sign in as <em><b>Employees</b></em>
 
 Video Link : https://drive.google.com/file/d/1dOV90SD8Kd8RNaNc8ZNIIS6l3NGnyXfg/view?usp=sharing
+Web App Link : https://yield-eight.vercel.app/
 
-## User Privileges
+The Web Application is fully responsive.
+
+## Owner Privileges
 
 1. Landing Page:
    <img src="https://github.com/42ip/wHACKiest2021_0x5A/blob/main/screenshots/landingpage.png"/> 
