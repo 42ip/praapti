@@ -69,6 +69,7 @@ function Map({viewport,data,setData}) {
         }
       ]
     });
+    
     /*----------------STATE-----------------------*/
     function getLocation(){
       if (navigator.geolocation) {
@@ -98,12 +99,14 @@ function Map({viewport,data,setData}) {
         })
         .then(res=>{
           let {features,type} = res.data[0];
+          
           features = features.map((elem,id)=>{
             return {
               properties : {},
               ...elem
             }
           })
+          // setViewport(vp)
           const newData = {
             type : type,
             features : features
