@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar.js';
 import Footer from './Components/Footer'
 import Home  from './Components/Home';
 import Privacy from './Components/Privacy';
+import Map from './Components/Map/Map'
 import {Component} from 'react';
 
 
@@ -26,7 +27,8 @@ class App extends Component{
               <Auth/>
             </Route>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/privacy" component={Privacy} /> 
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/map" component={Map}/> 
         </Switch>
          <Footer/>
       </div>
