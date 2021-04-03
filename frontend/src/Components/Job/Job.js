@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import { Card,Button} from 'react-bootstrap';
-import classes from './IMS.module.css';
-import { Link } from 'react-router-dom';
-export default class IMS extends Component {
+import classes from './Job.module.css';
+
+export default class Job extends Component {
     render() {
         return (
         <div class="IMS_body">
-                <h1 style={{color:'#52734D'}} className={classes.Title}>Inventory management system</h1>
+                <h1 style={{color:'#52734D'}} className={classes.Title}>Job Portal</h1>
                 <div className={classes.cards}>
                     {/* dummy data */}
                         <div className={classes.item}>
@@ -17,11 +17,8 @@ export default class IMS extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content. Lorem is a dummy text that is used very frequently.
                         </Card.Text>
-                        </Card.Body>
-                        <Link to="/sf">
-                         <Button variant="primary" className={classes.addBtn}>Update Details</Button>          
-                         
-                        </Link>
+                         </Card.Body>
+                         <a className={classes.addBtn} href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Apply Here</a>          
                         <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer>
@@ -34,10 +31,8 @@ export default class IMS extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content. Lorem is a dummy text that is used very frequently.
                         </Card.Text>
-                        </Card.Body>
-                            <Link to="/sf">
-                                <Button variant="primary" className={classes.addBtn}>Update details</Button>
-                            </Link>
+                         </Card.Body>
+                                <Button variant="primary" className={classes.addBtn}>Apply Here!</Button>
                         <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer>               
@@ -50,10 +45,8 @@ export default class IMS extends Component {
                                  Some quick example text to build on the card title and make up the bulk of
                                  the card's content. Lorem is a dummy text that is used very frequently.
                             </Card.Text>
-                        </Card.Body>
-                           <Link to="/sf"> 
-                            <Button variant="primary" className={classes.addBtn}>Update details</Button>
-                            </Link>
+                            </Card.Body>
+                            <Button variant="primary" className={classes.addBtn}>Apply Here!</Button>
                          <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer> 

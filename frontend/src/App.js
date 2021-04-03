@@ -12,7 +12,8 @@ import Home  from './Components/Home';
 import Privacy from './Components/Privacy';
 import Map from './Components/Map/Map'
 import Profile from './Components/Profile/Profile'
-import IMS from './Components/UserProfs/IMS'
+import IMS from './Components/UserProfs/IMS';
+import Job from './Components/Job/Job'
 import {Component} from 'react';
 import SubmitForm from './Components/SubmitForm';
 
@@ -39,6 +40,8 @@ class App extends Component{
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/map" component={Map}/>
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/job" component={Job}/>
+          <Route exact path="/profile" component={Profile}></Route> 
         </Switch>
          <Footer/>
       </div>
