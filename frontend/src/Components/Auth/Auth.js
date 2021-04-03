@@ -155,7 +155,7 @@ export default function Auth() {
           [loginPassword,setLoginPassword] = useState(""),
           [state,setState] = useState(false),
           [redirect,setRedirect] = useState(false),
-          [role,setRole] = useState(""),
+          [role,setRole] = useState("Owner"),
           [address,setAddress] = useState(""),
           [phone,setPhone] = useState(""),
           [aadhar,setAadhar] = useState("")

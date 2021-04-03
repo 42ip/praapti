@@ -85,7 +85,7 @@ export default function Profile() {
                             <p>{elem[0]}</p>
                         </div>
                         <div className={classes.info}>
-                            <p>{elem[1]}</p>
+                            <p>{elem[1]!==undefined? elem[1] : `Please Update Details`}</p>
                         </div>
                     </div>
                 
@@ -106,7 +106,7 @@ export default function Profile() {
                 <div className={classes.picture}>
                     <img src={"http://www.fillmurray.com/300/300"} alt="murray"></img>
                     <button className={classes.btn} onClick = {handleOpen}>Update Details</button><br/><br/>
-                    <button className={classes.btn} onClick={handleRedirect}>View My Applications</button>
+                    <button className={classes.btn} onClick={handleRedirect}>Applications</button>
                 </div>
                 <div className={classes.details}>
                     {table}
