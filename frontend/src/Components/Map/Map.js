@@ -81,7 +81,7 @@ function Map({viewport,role,data,setData}) {
         }
       ]
     });
-    const [role,setRole] = useState(localStorage.getItem("role"));
+    const [role] = useState(localStorage.getItem("role"));
     /*----------------STATE-----------------------*/
     function getLocation(){
       if (navigator.geolocation) {

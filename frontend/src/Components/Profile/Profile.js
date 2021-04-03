@@ -1,4 +1,4 @@
-import React,{useState,useEffect,useRef} from 'react'
+import React,{useState,useRef} from 'react'
 import classes from './Profile.module.css'
 import Modal from '../Modal/Modal'
 
@@ -8,7 +8,7 @@ import Modal from '../Modal/Modal'
 
 export default function Profile() {
     const [modal,setModal] = useState(false);
-    const [userData,setUserData] = useState([
+    const [userData] = useState([
         "Tirtharaj Sengupta",
         "93432532532526",
         "Indian",
@@ -44,7 +44,7 @@ export default function Profile() {
             :
         <div className={classes.top}>
             <div className={classes.picture}>
-                <img src={"http://www.fillmurray.com/300/300"}></img>
+                <img src={"http://www.fillmurray.com/300/300"} alt="murray"></img>
                 <button className={classes.btn} onClick = {handleOpen}>Upload Documents</button><br/><br/>
                 <button className={classes.btn}>View My Applications</button>
             </div>
