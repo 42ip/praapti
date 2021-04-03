@@ -36,13 +36,10 @@ class App extends Component{
                 <SubmitForm />
             </Route>      
           <Route exact path="/IMS" component={IMS}/>
-
-
-
-          
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/map" component={Map}/>
+          <Route exact path="/profile" component={Profile} />
           <Route exact path="/job" component={Job}/>
           <Route exact path="/profile" component={Profile}></Route> 
         </Switch>

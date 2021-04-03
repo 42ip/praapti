@@ -18,7 +18,7 @@ export default class Job extends Component {
                             the card's content. Lorem is a dummy text that is used very frequently.
                         </Card.Text>
                          </Card.Body>
-                         <a className={classes.addBtn} href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Apply Here</a>          
+                            <Button variant="primary" className={classes.addBtn} href="https://www.youtube.com/watch?v=xvFZjo5PgG0">Apply Here!</Button>          
                         <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer>

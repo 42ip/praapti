@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react'
+import React,{useState,useRef, useEffect} from 'react'
 import classes from './Profile.module.css'
 import Modal from '../Modal/Modal'
 import {useHistory} from 'react-router-dom'
@@ -85,7 +85,7 @@ export default function Profile() {
                             <p>{elem[0]}</p>
                         </div>
                         <div className={classes.info}>
-                            <p>{elem[1]!==undefined? elem[1] : `Please Update Details`}</p>
+                            <p>{elem[1] !== undefined ? elem[1] : `Please update Details`}</p>
                         </div>
                     </div>
                 
@@ -114,13 +114,11 @@ export default function Profile() {
             </div>
         }
         </>
-    )
-}
-/*
+    );
+}         
             
             
-            
-                <div className={classes.infoBox}>
+                /* <div className={classes.infoBox}>
                     <div className={classes.labels}>
                         <p>Name</p>
                     </div>
@@ -185,4 +183,4 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-        </div>*/
+        </div> */
