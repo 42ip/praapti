@@ -21,12 +21,14 @@ export default function Modal({prop,labels,handleSubmit,handleClose}) {
             return <><label style={LabelStyle}>{labels[id]}</label><input style={inputStyle} className={classes.inp} ref={elem}></input></>
         })
     return (
+        <div className={classes.modal_container}>
         <div className={classes.modal}>
             {inputs}
             <div className={classes.btnC}>
                 <button onClick={handleSubmit}>Submit Details</button>
                 <button onClick={handleClose}>Close</button>
             </div>
+        </div>
         </div>
     )
 }

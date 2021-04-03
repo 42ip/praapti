@@ -32,10 +32,7 @@
     width: 100%;
     border-bottom:3px  white solid;
     height: 200px;
-    border-top-left-radius:  20px;
-    border-top-right-radius:  20px;
-    border-top-left-radius:  20px;
-    border-top-right-radius:  20px;
+    border-radius: 20px;
     margin-bottom: 5px;
 }
 
@@ -95,6 +92,7 @@ Button {
     }
 
     .item{
+        margin-right: 0;
         max-height: 550px;
     }
 }

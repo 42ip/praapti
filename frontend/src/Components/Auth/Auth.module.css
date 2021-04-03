@@ -27,8 +27,15 @@
 .register,
 .login {
     width: 100%;
-    height: fit-content;
     margin-bottom: 1rem;
+}
+
+.register{
+    min-height: 77vh;
+}
+
+.login{
+    min-height: 60vh;
 }
 
 .login {

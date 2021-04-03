@@ -38,7 +38,7 @@ class App extends Component{
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/map" component={Map}/>
-          <Route exact path="/profile" component={Profile}></Route> 
+          <Route exact path="/profile" component={Profile} />
         </Switch>
          <Footer/>
       </div>
