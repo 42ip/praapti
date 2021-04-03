@@ -10,10 +10,10 @@ function Map({viewport,data,setData}) {
     
     
     
-      const navControlStyle= {
-        right: 10,
-        top: 10
-      };
+    //   const navControlStyle= {
+    //     right: 10,
+    //     top: 10
+    //   };
       
     const addFields = ()=>{
       console.log(data);
@@ -90,7 +90,8 @@ function Map({viewport,data,setData}) {
       setViewport(newViewPort);
     }
     useEffect(()=>{
-      console.log(getLocation());
+        console.log(getLocation());
+        // eslint-disable-next-line
     },[])
     return(
       <Map viewport={viewport} data={data} setData={setData}/>
