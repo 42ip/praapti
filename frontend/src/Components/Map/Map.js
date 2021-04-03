@@ -47,7 +47,12 @@ function Map({viewport,data,setData}) {
              <button type="button" className={classes.imsBtn}>
              IMS
              </button>
-             </Link>   
+            </Link>
+            <Link to="/SF">
+             <button type="button" className={classes.sfBtn}>
+             Submit Details
+             </button>
+             </Link>
       </>
     );
   }
