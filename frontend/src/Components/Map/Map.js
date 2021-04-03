@@ -7,11 +7,6 @@ import classes from './Map.module.css'
 import axios from 'axios';
 
 function Map({viewport,data,setData}) {
-    //   const navControlStyle= {
-    //     right: 10,
-    //     top: 10
-    //   };
-      
     const addFields = ()=>{
       console.log(data);
       console.log(localStorage.getItem("user"));

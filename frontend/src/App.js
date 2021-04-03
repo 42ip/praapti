@@ -11,6 +11,7 @@ import Footer from './Components/Footer'
 import Home  from './Components/Home';
 import Privacy from './Components/Privacy';
 import Map from './Components/Map/Map'
+import Profile from './Components/Profile/Profile'
 import {Component} from 'react';
 
 
@@ -28,7 +29,8 @@ class App extends Component{
             </Route>
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/map" component={Map}/> 
+          <Route exact path="/map" component={Map}/>
+          <Route exact path="/profile" component={Profile}></Route> 
         </Switch>
          <Footer/>
       </div>
