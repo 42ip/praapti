@@ -10,10 +10,15 @@
     "@urbica/react-map-gl": "^1.14.2",
     "@urbica/react-map-gl-draw": "^0.3.5",
     "axios": "^0.21.1",
+<<<<<<< HEAD
+=======
+    "bootstrap": "^4.6.0",
+>>>>>>> 8dd9113c99f7cebc71283b40049afe38c9f5c82a
     "mapbox-gl": "^2.2.0",
     "mime": "^1.6.0",
     "ol": "^6.5.0",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-map-gl": "^6.1.11",
     "react-router-dom": "^5.2.0",

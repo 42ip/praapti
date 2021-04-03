@@ -1,18 +1,20 @@
 .topReg {
-    margin: 2rem 0rem 0rem 0rem;
+    margin: 1rem 0rem 0rem 0rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .inp {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: block;
+    text-align: left;
 }
 
 .inp>label {
-    width: fit-content;
+    display: block;
+    width:30%;
+    margin: 0 auto;
+    padding: 0.4rem;
 }
 
 .img>img {
@@ -24,12 +26,9 @@
 
 .register,
 .login {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     height: fit-content;
-    align-items: center;
-    margin-bottom: 8%;
+    margin-bottom: 1rem;
 }
 
 .login {
@@ -37,13 +36,16 @@
 }
 
 .input {
-    width: 40rem;
+    display: block;
+    width: 30%;
     padding: 0.4rem;
-    margin-bottom: 1rem;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
 }
 
 .button {
-    width: 41rem;
+    width: 30%;
     margin-top: 1rem;
     padding: 0.8rem;
     background-color: #8dc788;
@@ -71,4 +73,32 @@
 
 .but1:hover {
     color: #11310c;
+}
+
+@media (max-width:1500px) {
+    .inp>label,.input,.button{
+        width: 40%;
+    }
+}
+
+@media (max-width:1200px) {
+    .inp>label,.input,.button{
+        width: 50%;
+    }
+}
+
+@media (max-width:900px) {
+    .inp>label,.input,.button{
+        width: 55%;
+    }
+}
+
+@media (max-width:600px) {
+    .inp>label,.input,.button{
+        width: 75%;
+    }
+
+    .but1,.button{
+        font-size: 1.1rem;
+    }
 }

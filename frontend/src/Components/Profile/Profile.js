@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useRef} from 'react'
 import classes from './Profile.module.css'
-
+import Modal from '../Modal/Modal'
 
 
 
@@ -17,14 +17,35 @@ export default function Profile() {
         9830020322,
         69
     ]);
+    const cityRef=useRef();
+    const nationRef = useRef();
+    const nativeRef = useRef();
 
+    const handleSubmit = ()=>{
+        console.log(cityRef.current.value);
+    }
+    const handleClose = () =>{
+        setModal(false);
+    }
 
-
+    const handleOpen = ()=>{
+        setModal(true);
+    }
+    const prop = [cityRef,nationRef,nativeRef]
+    const labels= ['City','Nation','Native State']
     return (
+        <>
+        {
+            modal? <Modal
+                    prop = {prop}
+                    labels = {labels}
+                    handleSubmit={handleSubmit}
+                    handleClose={handleClose}/> 
+            :
         <div className={classes.top}>
             <div className={classes.picture}>
                 <img src={"http://www.fillmurray.com/300/300"}></img>
-                <button className={classes.btn}>Upload Documents</button><br/><br/>
+                <button className={classes.btn} onClick = {handleOpen}>Upload Documents</button><br/><br/>
                 <button className={classes.btn}>View My Applications</button>
             </div>
             
@@ -94,6 +115,7 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>}
+        </>
     )
 }

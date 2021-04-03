@@ -72,7 +72,7 @@ router.post("/addFeatures",(req,res)=>{
 router.post("/getFeatures",(req,res)=>{
     const {id} = req.body;
     Feature.find({userId : id})
-    .then((feat)=>{ 
+    .then((feat)=>{
         res.status(201).send(feat);
     })
     .catch(err=>{
