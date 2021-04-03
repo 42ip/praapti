@@ -5,6 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
 import classes from './Map.module.css'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Map({viewport,data,setData}) {
     //   const navControlStyle= {
@@ -39,9 +40,14 @@ function Map({viewport,data,setData}) {
           
         >
           <Draw data={data} onChange={(data) => setData(data)}/> 
-          <button onClick={addFields} className={classes.addBtn}>Add them fields</button>
+            <button onClick={addFields} className={classes.addBtn}>Add fields</button>   
         </MapGL>
-        
+            {/* this is just a testing button, no big deal */}
+            <Link to="/IMS">
+             <button type="button" className={classes.imsBtn}>
+             IMS
+             </button>
+             </Link>   
       </>
     );
   }
