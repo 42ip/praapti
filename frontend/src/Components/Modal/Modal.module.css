@@ -1,0 +1,38 @@
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    justify-items: center;
+    background-color: #91c788;
+    border-radius: 12px;
+}
+
+.btnC>button{
+    width: 8rem;
+    height: 1.5rem;
+    color: #386430;
+    background-color: #aee6a4;
+    margin: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btnC>button:hover{
+    background-color: #386430;
+    color: #aee6a4;
+}
+
+.btnC{
+    display: flex;
+    width: 100%;
+    justify-content: space-between  ;
+}

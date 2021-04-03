@@ -11,8 +11,9 @@ import Footer from './Components/Footer'
 import Home  from './Components/Home';
 import Privacy from './Components/Privacy';
 import Map from './Components/Map/Map'
+import Profile from './Components/Profile/Profile'
+import IMS from './Components/UserProfs/IMS'
 import {Component} from 'react';
-import IMS from './Components/UserProfs/IMS';
 import SubmitForm from './Components/SubmitForm';
 
 class App extends Component{
@@ -24,7 +25,7 @@ class App extends Component{
         <Navbar/>
       </header>
         <Switch>
-            <Route exact path="/Reg">
+        <Route exact path="/Reg">
               <Auth/>
             </Route>
             <Route exact path="/IMS">
@@ -33,9 +34,11 @@ class App extends Component{
             <Route exact path="/SF">
                 <SubmitForm />
             </Route>      
+          <Route exact path="/IMS" component={IMS}/>
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} />
-          <Route exact path="/map" component={Map}/> 
+          <Route exact path="/map" component={Map}/>
+          <Route exact path="/profile" component={Profile}></Route> 
         </Switch>
          <Footer/>
       </div>
