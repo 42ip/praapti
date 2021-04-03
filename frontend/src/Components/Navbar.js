@@ -1,24 +1,42 @@
-import { Component } from 'react';
+import { useState} from 'react';
 import './css/Navbar.css';
 import logo from '../images/logo.png';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
-export default class Navbar extends Component {
-    render() {
+
+
+export default function Navbar (){
+        const [state,setState] = useState(localStorage.getItem("role")==="Employee" || localStorage.getItem("role")==="Owner");
+        const history = useHistory();
+        const handleLogout = () =>{
+            localStorage.clear();
+            history.push("/")
+            setState(false);
+        }
+        const handleRegister = () =>{
+            if (localStorage.getItem("role")==="Employee" || localStorage.getItem("role")==="Owner"){
+                window.location.reload();
+            }
+            else history.push("/reg")
+        }
+
         return (
             <div className="navbar">
+                
                 <Link to="/map" className="homelogo">
                 <img src={logo} alt="logo" />
                 </Link>
-                <Link to="/reg">
-                <button type="button" className="button-one">
+                {!state?
+                <button type="button" className="button-one" onClick={handleRegister}>
                      Register
                 </button>
-                </Link>
+                :<button type="button" className="button-one" onClick={handleLogout}>
+                     Logout
+                </button>}
                 {/* <button className="button-two">
                  Sign Up
                 </button> */}
             </div>
         );
-    }
+    
 }
