@@ -21,8 +21,7 @@ function Map({viewport,data,setData}) {
       const id = localStorage.getItem("_id");
       axios({
         method : 'post',
-        data : data,
-        _id : id,
+        data : {...data,id},
         withCredentials : true,
         url : "http://localhost:8080/addFeatures"
       })

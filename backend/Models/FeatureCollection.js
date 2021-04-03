@@ -1,23 +1,25 @@
 const mongoose = require("mongoose");
 
+const geom = {
+    coordinates : [Number],
+    type : String
+}; 
 
-const feat = new mongoose.Schema({
+const feat = {
+    id : String,
     type : String,
     properties : Map,
-    geometry : {
-        coordinates : [Number],
-        type : String,
-    },
-});
+    geometry : geom
+};
 
 
 const featureSchema = new mongoose.Schema({
-    id : {
-        type : mongoose.ObjectId,
+    userId : {
+        type : String,
         required : true
     },
-    features : [feat]
-
+    type : String,
+    features : mongoose.Schema.Types.Mixed
 })
 
 const feature = mongoose.model('feature', featureSchema);

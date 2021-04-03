@@ -49,8 +49,10 @@ router.get("/test", (req, res) => {
 
 
 router.post("/addFeatures",(req,res)=>{
-    const {type,features} = req.body;
+    const {type,features,id} = req.body;
+    console.log(features);
     const newFeat = new Feature({
+        userId : id,
         type : type,
         features : features
     });
