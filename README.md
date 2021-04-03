@@ -7,7 +7,7 @@ We have 2 roles in our portal:
 1. The Land Owners sign in as <em><b>Owners</b></em>
 2. The Workers sign in as <em><b>Employees</b></em>
 
-Video Link : https://drive.google.com/file/d/1dOV90SD8Kd8RNaNc8ZNIIS6l3NGnyXfg/view?usp=sharing
+Video Link : https://drive.google.com/file/d/1dOV90SD8Kd8RNaNc8ZNIIS6l3NGnyXfg/view?usp=sharing  
 Web App Link : https://yield-eight.vercel.app/
 
 The Web Application is fully responsive.
