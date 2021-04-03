@@ -7,9 +7,6 @@ import classes from './Map.module.css'
 import axios from 'axios';
 
 function Map({viewport,data,setData}) {
-    
-    
-    
     //   const navControlStyle= {
     //     right: 10,
     //     top: 10
@@ -91,6 +88,32 @@ function Map({viewport,data,setData}) {
     }
     useEffect(()=>{
         console.log(getLocation());
+        axios({
+          method : 'post',
+          data : {
+            id : localStorage.getItem("_id")
+          },
+          withCredentials : true,
+          url : "http://localhost:8080/getFeatures"
+        })
+        .then(res=>{
+          let {features,type} = res.data[0];
+          features = features.map((elem,id)=>{
+            return {
+              properties : {},
+              ...elem
+            }
+          })
+          const newData = {
+            type : type,
+            features : features
+          }
+          setData(newData);
+          
+        })
+        .catch(err=>{
+          console.log(err);
+        })
         // eslint-disable-next-line
     },[])
     return(

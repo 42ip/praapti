@@ -57,13 +57,13 @@ router.post("/addFeatures",(req,res)=>{
         features : features
     }
 
-    Feature.updateOne({userId : id},newFeat,{upsert : true}).
-    then((doc)=>{
+    Feature.updateOne({userId : id},newFeat,{upsert : true})
+    .then((doc)=>{
         console.log(doc);
         res.status(201).send("Done");
     })
     .catch((err)=>{
-        res.status(200).send("Failed");
+        res.status(200).send(err);
     })
     
 })
@@ -72,8 +72,11 @@ router.post("/addFeatures",(req,res)=>{
 router.post("/getFeatures",(req,res)=>{
     const {id} = req.body;
     Feature.find({userId : id})
-    .then(()=>{
-
+    .then((feat)=>{
+        res.status(201).send(feat);
+    })
+    .catch(err=>{
+        throw err;
     })
 })
 
