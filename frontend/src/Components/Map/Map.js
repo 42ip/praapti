@@ -21,7 +21,7 @@ function Map({viewport,role,data,setData}) {
         method : 'post',
         data : {...data,id},
         withCredentials : true,
-        url : "http://localhost:8080/addFeatures"
+        url : "https://backend0x5a.herokuapp.com/addFeatures"
       })
       .then((res)=>{
         console.log(res);
@@ -108,7 +108,7 @@ function Map({viewport,role,data,setData}) {
             id : localStorage.getItem("_id")
           },
           withCredentials : true,
-          url : "http://localhost:8080/getFeatures"
+          url : "https://backend0x5a.herokuapp.com/getFeatures"
         })
         .then(res=>{
           let {features,type} = res.data[0];

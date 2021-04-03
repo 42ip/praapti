@@ -43,7 +43,7 @@ export default function Profile() {
                 nation : nation,
                 native : native
             },
-            url : "http://localhost:8080/updateWorkerDetails"
+            url : "https://backend0x5a.herokuapp.com/updateWorkerDetails"
         })
         setData(newData);
         handleClose();
@@ -62,7 +62,7 @@ export default function Profile() {
     useEffect(()=>{
         axios({
             method : 'post',
-            url : 'http://localhost:8080/getWorkerDetails',
+            url : 'https://backend0x5a.herokuapp.com/getWorkerDetails',
             data : {
                 id : localStorage.getItem("_id")
             }

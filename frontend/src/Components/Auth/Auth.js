@@ -172,7 +172,7 @@ export default function Auth() {
                 aadhar : aadhar
             },
             withCredentials : true,
-            url : 'http://localhost:8080/register'
+            url : 'https://backend0x5a.herokuapp.com/register'
         })
         .then(res=>{
             console.log(res)
@@ -195,7 +195,7 @@ export default function Auth() {
                 password : loginPassword
             },
             withCredentials: true,
-            url : 'http://localhost:8080/login'
+            url : 'https://backend0x5a.herokuapp.com/login'
         })
         .then(res=>{
             console.log(res);
