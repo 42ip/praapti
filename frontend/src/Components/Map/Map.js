@@ -7,7 +7,7 @@ import classes from './Map.module.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-function Map({viewport,data,setData}) {
+function Map({viewport,role,data,setData}) {
     //   const navControlStyle= {
     //     right: 10,
     //     top: 10
@@ -39,15 +39,21 @@ function Map({viewport,data,setData}) {
           accessToken={"pk.eyJ1IjoidGlydGgwIiwiYSI6ImNrbjB0NHY1aTA5bTkycG56NXZhdXl4MGkifQ.1ywfUyHehaszWb-Q0tlb3g"}
           
         >
-          <Draw data={data} onChange={(data) => setData(data)}/> 
-            <button onClick={addFields} className={classes.addBtn}>Add fields</button>   
+          
+          {role!=="Employee"?<><Draw data={data} onChange={(data) => setData(data)}/> 
+          <button onClick={addFields} className={classes.addBtn}>Add fields</button> </>:null}
         </MapGL>
             {/* this is just a testing button, no big deal */}
+            {role !== "Employee"?
             <Link to="/IMS">
              <button type="button" className={classes.imsBtn}>
              IMS
              </button>
-             </Link>   
+             </Link>: <Link to="/profile">
+             <button type="button" className={classes.imsBtn}>
+             Profile Page
+             </button>
+             </Link>}   
       </>
     );
   }
@@ -75,6 +81,7 @@ function Map({viewport,data,setData}) {
         }
       ]
     });
+    const [role,setRole] = useState(localStorage.getItem("role"));
     /*----------------STATE-----------------------*/
     function getLocation(){
       if (navigator.geolocation) {
@@ -123,6 +130,6 @@ function Map({viewport,data,setData}) {
         // eslint-disable-next-line
     },[])
     return(
-      <Map viewport={viewport} data={data} setData={setData}/>
+      <Map viewport={viewport} role={role} data={data} setData={setData}/>
     );
   }

@@ -199,6 +199,7 @@ export default function Auth() {
             if (res.status === 200) {
                 localStorage.setItem("user",res.data.username);
                 localStorage.setItem("_id",res.data._id);
+                localStorage.setItem("role",res.data.role);
                 setRedirect(true);
             }
         })
