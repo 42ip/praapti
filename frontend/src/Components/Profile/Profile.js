@@ -1,12 +1,13 @@
 import React,{useState,useEffect,useRef} from 'react'
 import classes from './Profile.module.css'
 import Modal from '../Modal/Modal'
-
+import {useHistory} from 'react-router-dom'
 
 
 
 
 export default function Profile() {
+    const history = useHistory();
     const [modal,setModal] = useState(false);
     const [userData,setUserData] = useState([
         "Tirtharaj Sengupta",
@@ -31,6 +32,10 @@ export default function Profile() {
     const handleOpen = ()=>{
         setModal(true);
     }
+
+    const handleRedirect = ()=>{
+        history.push("/job")
+    }
     const prop = [cityRef,nationRef,nativeRef]
     const labels= ['City','Nation','Native State']
     return (
@@ -46,7 +51,7 @@ export default function Profile() {
             <div className={classes.picture}>
                 <img src={"http://www.fillmurray.com/300/300"}></img>
                 <button className={classes.btn} onClick = {handleOpen}>Upload Documents</button><br/><br/>
-                <button className={classes.btn}>View My Applications</button>
+                <button className={classes.btn} onClick={handleRedirect}>View My Applications</button>
             </div>
             
             <div className={classes.details}>
