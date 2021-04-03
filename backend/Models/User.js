@@ -24,8 +24,22 @@ const userSchema = new mongoose.Schema({
     aadhar: {
         type: String,
         required: true
-    }
-
+    },
+    taxes_due: {
+        type: Number
+    },
+    prev_sess_yield: {
+        type: Number
+    },
+    cost_of_fert: {
+        type: Number
+    },
+    cost_of_seeds: {
+        type: Number
+    },
+    employees: {
+        type: Number
+    },
 })
 
 const user = mongoose.model('user', userSchema);

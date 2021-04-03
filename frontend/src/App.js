@@ -13,7 +13,7 @@ import Privacy from './Components/Privacy';
 import Map from './Components/Map/Map'
 import {Component} from 'react';
 import IMS from './Components/UserProfs/IMS';
-
+import SubmitForm from './Components/SubmitForm';
 
 class App extends Component{
   render(){
@@ -30,6 +30,9 @@ class App extends Component{
             <Route exact path="/IMS">
                 <IMS/>
             </Route>
+            <Route exact path="/SF">
+                <SubmitForm />
+            </Route>      
           <Route exact path="/" component={Home}/>
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/map" component={Map}/> 
