@@ -51,14 +51,18 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
 
                     <div className={classes.inp}>
                     <label htmlFor="confirm">Role</label>
-                        <input
+                        {/* <input
                             name="role"
                             className={classes.input}
                             placeholder="Role"
                             type="text"
-                            onChange={e=> setRole(e.target.value)}
+                            onChange={e => setRole(e.target.value)}   
                         >
-                        </input>
+                        </input> */}
+                            <select name="role" onChange={e => setRole(e.target.value)} className={classes.input} id="">
+                                <option value="Owner">Owner</option>
+                                <option value="Employee">Employee</option>
+                            </select>
                     </div>
 
                     <div className={classes.inp}>

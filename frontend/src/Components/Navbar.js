@@ -7,7 +7,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <div className="navbar">
-                <Link to="/" className="homelogo">
+                <Link to="/map" className="homelogo">
                 <img src={logo} alt="logo" />
                 </Link>
                 <Link to="/reg">
