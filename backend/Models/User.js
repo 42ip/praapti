@@ -40,6 +40,11 @@ const userSchema = new mongoose.Schema({
     employees: {
         type: Number
     },
+    
+    city : String,
+    nation : String,
+    state : String,
+    applications : Number
 })
 
 const user = mongoose.model('user', userSchema);

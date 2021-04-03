@@ -85,6 +85,51 @@ router.post("/getFeatures", (req, res) => {
         })
 })
 
+router.post('/getWorkerDetails',(req,res)=>{
+    const userId = req.body.id;
+    
+    User.findOne({_id : userId})
+    .then((user)=>{
+        if (user){
+            res.status(201).send(user);
+        }
+        else{
+            res.status(200).send("User not found");
+        }
+    })
+    .catch((err)=>{
+        res.status(500).send("Server Error");
+    });
+});
+
+router.post('/updateWorkerDetails',(req,res)=>{
+    
+    console.log(req.body)
+    const {city,nation,native,id} = req.body;
+    updateOps = {
+        city : city,
+        nation : nation,
+        state : native,
+        applications : 0
+    }
+    User.findOneAndUpdate({
+        _id : id
+    },{
+        $set : updateOps
+    },
+    {
+        new : true
+    })
+    .then((user)=>{
+        console.log("Nice");
+    })
+    .catch((err)=>{
+        console.log("Not nice");
+    })
+
+
+})
+
 router.post("/submitDetails", upload.single('recfile'), (req, res) => {
 
     // console.log(JSON.stringify(req))

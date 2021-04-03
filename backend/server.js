@@ -16,7 +16,8 @@ const app = express();
 
 mongoose.connect("mongodb+srv://Tirtharaj:pukai007@cluster0.t7zhe.mongodb.net/agrotech?retryWrites=true&w=majority",{
     useNewUrlParser : true,
-    useUnifiedTopology : true
+    useUnifiedTopology : true,
+    useFindAndModify : false
 }, ()=>{
     console.log("connected to database");
 })
@@ -42,6 +43,6 @@ require('./Config/passportConfig')(passport);
 //Routes
 app.use('/',homeRoutes);
 
-app.listen(8080,()=>{
+app.listen(process.env.PORT  ||  8080,()=>{
     console.log("Nice ");
 });
