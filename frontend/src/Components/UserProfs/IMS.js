@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Card,Button} from 'react-bootstrap';
 import classes from './IMS.module.css';
-
+import { Link } from 'react-router-dom';
 export default class IMS extends Component {
     render() {
         return (
@@ -17,8 +17,11 @@ export default class IMS extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content. Lorem is a dummy text that is used very frequently.
                         </Card.Text>
-                         </Card.Body>
-                         <Button variant="primary" className={classes.addBtn}>Update details</Button>          
+                        </Card.Body>
+                        <Link to="/sf">
+                         <Button variant="primary" className={classes.addBtn}>Update Details</Button>          
+                         
+                        </Link>
                         <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer>
@@ -31,8 +34,10 @@ export default class IMS extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content. Lorem is a dummy text that is used very frequently.
                         </Card.Text>
-                         </Card.Body>
+                        </Card.Body>
+                            <Link to="/sf">
                                 <Button variant="primary" className={classes.addBtn}>Update details</Button>
+                            </Link>
                         <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer>               
@@ -45,8 +50,10 @@ export default class IMS extends Component {
                                  Some quick example text to build on the card title and make up the bulk of
                                  the card's content. Lorem is a dummy text that is used very frequently.
                             </Card.Text>
-                            </Card.Body>
+                        </Card.Body>
+                           <Link to="/sf"> 
                             <Button variant="primary" className={classes.addBtn}>Update details</Button>
+                            </Link>
                          <Card.Footer>
                           <small className="text-muted">Last updated 3 mins ago</small>
                         </Card.Footer> 

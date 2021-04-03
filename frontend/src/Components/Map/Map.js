@@ -43,13 +43,19 @@ function Map({viewport,role,data,setData}) {
           {role!=="Employee"?<><Draw data={data} onChange={(data) => setData(data)}/> 
           <button onClick={addFields} className={classes.addBtn}>Add fields</button> </>:null}
         </MapGL>
-            {/* this is just a testing button, no big deal */}
-            {role !== "Employee"?
+            {role !== "Employee" ?
+                <>
             <Link to="/IMS">
              <button type="button" className={classes.imsBtn}>
              IMS
              </button>
-             </Link>: <Link to="/profile">
+            </Link>
+            <Link to="/SF">
+             <button type="button" className={classes.sfBtn}>
+             Submit Details
+             </button>
+             </Link>
+             </> : <Link to="/profile">
              <button type="button" className={classes.imsBtn}>
              Profile Page
              </button>
@@ -81,7 +87,7 @@ function Map({viewport,role,data,setData}) {
         }
       ]
     });
-    const [role,setRole] = useState(localStorage.getItem("role"));
+    const [role] = useState(localStorage.getItem("role"));
     /*----------------STATE-----------------------*/
     function getLocation(){
       if (navigator.geolocation) {

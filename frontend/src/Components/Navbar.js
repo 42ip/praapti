@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import './css/Navbar.css';
 import logo from '../images/logo.png';
 import { Link,useHistory } from 'react-router-dom';
@@ -23,7 +23,9 @@ export default function Navbar (){
         return (
             <div className="navbar">
                 
+                <Link to="/map" className="homelogo">
                 <img src={logo} alt="logo" />
+                </Link>
                 {!state?
                 <button type="button" className="button-one" onClick={handleRegister}>
                      Register

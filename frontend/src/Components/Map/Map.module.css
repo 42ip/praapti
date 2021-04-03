@@ -15,7 +15,8 @@
 }
 
 .addBtn:hover,
-.imsBtn:hover {
+.imsBtn:hover,
+.sfBtn:hover {
     background-color: #386430;
     color: #aee6a4;
 }
@@ -34,4 +35,20 @@
     z-index: 10;
     left: 0;
     top: 20vh;
+}
+
+.sfBtn {
+    position: absolute;
+    width: 8rem;
+    height: 3rem;
+    margin: 1rem;
+    font-size: medium;
+    background-color: #91c788;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 10;
+    left: 0;
+    top: 30vh;
 }

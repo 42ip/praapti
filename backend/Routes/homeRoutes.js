@@ -3,8 +3,13 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const bcrypt = require("bcryptjs");
 const User = require('../Models/User');
-const Feature = require('../Models/FeatureCollection')
+const Feature = require('../Models/FeatureCollection');
+var path = require('path')
+var multer = require('multer');
+var upload = multer({ dest: 'uploads/' });
+var fs = require('fs');
 
+var type = upload.single('recfile');
 
 router.post('/register', (req, res) => {
     User.findOne({ username: req.body.username }, async(err, doc) => {
@@ -48,36 +53,57 @@ router.get("/test", (req, res) => {
 });
 
 
-router.post("/addFeatures",(req,res)=>{
-    const {type,features,id} = req.body;
+router.post("/addFeatures", (req, res) => {
+    const { type, features, id } = req.body;
     console.log(features);
     const newFeat = {
-        userId : id,
-        type : type,
-        features : features
+        userId: id,
+        type: type,
+        features: features
     }
 
-    Feature.updateOne({userId : id},newFeat,{upsert : true})
-    .then((doc)=>{
-        console.log(doc);
-        res.status(201).send("Done");
-    })
-    .catch((err)=>{
-        res.status(200).send(err);
-    })
-    
+    Feature.updateOne({ userId: id }, newFeat, { upsert: true })
+        .then((doc) => {
+            console.log(doc);
+            res.status(201).send("Done");
+        })
+        .catch((err) => {
+            res.status(200).send(err);
+        })
+
 })
 
 
-router.post("/getFeatures",(req,res)=>{
-    const {id} = req.body;
-    Feature.find({userId : id})
-    .then((feat)=>{
-        res.status(201).send(feat);
-    })
-    .catch(err=>{
-        throw err;
-    })
+router.post("/getFeatures", (req, res) => {
+    const { id } = req.body;
+    Feature.find({ userId: id })
+        .then((feat) => {
+            res.status(201).send(feat);
+        })
+        .catch(err => {
+            throw err;
+        })
+})
+
+router.post("/submitDetails", upload.single('recfile'), (req, res) => {
+
+    // console.log(JSON.stringify(req))
+    var tmp_path = req.file.path;
+    var target_path = 'uploads/' + req.file.originalname;
+
+    var src = fs.createReadStream(tmp_path);
+    var dest = fs.createWriteStream(target_path);
+    src.pipe(dest);
+    src.on('end', function() {});
+    src.on('error', function(err) { res.json({ error: err }) });
+    // const { id } = req.body;
+    // Feature.find({ userId: id })
+    //     .then((deets) => {
+    //         res.status(201).send(deets);
+    //     })
+    //     .catch(err => {
+    //         throw err;
+    //     })
 })
 
 module.exports = router;

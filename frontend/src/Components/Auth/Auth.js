@@ -31,7 +31,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                         <input
                             name="username"
                             className={classes.input}
-                            placeholder="username"
+                            placeholder="Username"
                             onChange={e=> setRegisterUsername(e.target.value)}
                         >
                         </input>
@@ -42,7 +42,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                         <input
                             name="password"
                             className={classes.input}
-                            placeholder="password"
+                            placeholder="Password"
                             type="password"
                             onChange={e=>setRegisterPassword(e.target.value)}
                         >
@@ -51,22 +51,26 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
 
                     <div className={classes.inp}>
                     <label htmlFor="confirm">Role</label>
-                        <input
+                        {/* <input
                             name="role"
                             className={classes.input}
                             placeholder="Role"
                             type="text"
-                            onChange={e=> setRole(e.target.value)}
+                            onChange={e => setRole(e.target.value)}   
                         >
-                        </input>
+                        </input> */}
+                            <select name="role" onChange={e => setRole(e.target.value)} className={classes.input} id="">
+                                <option value="Owner">Owner</option>
+                                <option value="Employee">Employee</option>
+                            </select>
                     </div>
 
                     <div className={classes.inp}>
-                    <label htmlFor="address">Address Line 1</label>
+                    <label htmlFor="address">Address Line</label>
                         <input
                             name="address"
                             className={classes.input}
-                            placeholder="address line"
+                            placeholder="Address line"
                             type="text"
                             onChange={e=> setAddress(e.target.value)}
                         >
@@ -78,7 +82,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                         <input
                             name="phone"
                             className={classes.input}
-                            placeholder="address line 2"
+                            placeholder="Phone Number"
                             type="text"
                             onChange={e=> setPhone(e.target.value)}
                         >
@@ -96,7 +100,6 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                         >
                         </input>
                     </div>
-
                     <button
                     className={classes.button}
                     onClick={register}
@@ -111,7 +114,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                         <label htmlFor="username">Username</label>
                         <input
                             className={`${classes.input} user`}
-                            placeholder="username"
+                            placeholder="Username"
                             onChange={e=> setLoginUsername(e.target.value)}
                         >
                         </input>
@@ -121,7 +124,7 @@ const Reg = ({setRole,setAddress,setPhone,setAadhar,register,login,state,redirec
                     <label htmlFor="password">Password</label>
                         <input
                             className={`${classes.input} pass`}
-                            placeholder="password"
+                            placeholder="Password"
                             type="password"
                             onChange={e=> setLoginPassword(e.target.value)}
                         >

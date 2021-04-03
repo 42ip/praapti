@@ -15,7 +15,7 @@ import Profile from './Components/Profile/Profile'
 import IMS from './Components/UserProfs/IMS';
 import Job from './Components/Job/Job'
 import {Component} from 'react';
-
+import SubmitForm from './Components/SubmitForm';
 
 class App extends Component{
   render(){
@@ -28,7 +28,13 @@ class App extends Component{
         <Switch>
         <Route exact path="/Reg">
               <Auth/>
-          </Route>
+            </Route>
+            <Route exact path="/IMS">
+                <IMS/>
+            </Route>
+            <Route exact path="/SF">
+                <SubmitForm />
+            </Route>      
           <Route exact path="/IMS" component={IMS}/>
 
 
