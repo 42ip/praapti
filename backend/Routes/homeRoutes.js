@@ -51,18 +51,29 @@ router.get("/test", (req, res) => {
 router.post("/addFeatures",(req,res)=>{
     const {type,features,id} = req.body;
     console.log(features);
-    const newFeat = new Feature({
+    const newFeat = {
         userId : id,
         type : type,
         features : features
-    });
-    console.log(newFeat)
-    newFeat.save()
-    .then(()=>{
-        res.status(200).send("FeatureList Updated");
+    }
+
+    Feature.updateOne({userId : id},newFeat,{upsert : true}).
+    then((doc)=>{
+        console.log(doc);
+        res.status(201).send("Done");
     })
-    .catch(()=>{
-        res.status(200).send("Failed to save");
+    .catch((err)=>{
+        res.status(200).send("Failed");
+    })
+    
+})
+
+
+router.post("/getFeatures",(req,res)=>{
+    const {id} = req.body;
+    Feature.find({userId : id})
+    .then(()=>{
+
     })
 })
 
