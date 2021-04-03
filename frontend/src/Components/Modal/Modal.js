@@ -18,15 +18,20 @@ const LabelStyle={
 
 export default function Modal({prop,labels,handleSubmit,handleClose}) {
     const inputs = prop.map((elem,id)=>{
-            return <><label style={LabelStyle}>{labels[id]}</label><input style={inputStyle} className={classes.inp} ref={elem}></input></>
+            if (labels[id]==="Image"){
+                return <><label style={LabelStyle}>{labels[id]}</label><input style={inputStyle} type="file" className={classes.inp} ref={elem}></input></>
+            }
+            else return <><label style={LabelStyle}>{labels[id]}</label><input style={inputStyle} className={classes.inp} ref={elem}></input></>
         })
     return (
+        <div className={classes.modal_container}>
         <div className={classes.modal}>
             {inputs}
             <div className={classes.btnC}>
                 <button onClick={handleSubmit}>Submit Details</button>
                 <button onClick={handleClose}>Close</button>
             </div>
+        </div>
         </div>
     )
 }

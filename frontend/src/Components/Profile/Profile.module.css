@@ -1,5 +1,7 @@
 .top{
     display: flex;
+    min-height: 80vh;
+    margin-bottom: 8px;
 }
 
 .details{
@@ -12,13 +14,11 @@
 
 .picture{
     margin: 2rem 2rem 0rem 2rem;
-    
 }
 
 .picture>img{
     border-radius: 100%;
     padding: 2rem;
-    
 }
 
 .labels{
@@ -54,4 +54,37 @@
 .btn:hover{
     color:#52734d;
     background-color: #a3e462;
+}
+
+@media (max-width:1200px){
+        .top{
+        display: block;
+        padding: 0;
+        text-align: center;
+    }
+
+    .picture>img{
+        display: block;
+        margin: 0 auto 20px;
+        padding: 0;
+    }
+
+    .info{
+    font-size: 1rem;
+}
+
+}
+
+@media (max-width:600px){
+    .details{
+        grid-template-columns: 1fr;
+    }
+    .info{
+    font-size: 0.9rem;
+}
+
+    .picture>img{
+        height: 200px;
+        width: 200px;
+    }
 }

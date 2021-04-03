@@ -1,9 +1,13 @@
+.modal_container{
+    min-height: 70vh;
+}
+
 .modal{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    position: static;
     background-color: white;
+    transform: translateX(-50%);
+    margin-left: 50vw;
+    margin-top: calc(25vh - 85px);
     width: 40%;
     height: auto;
     display: flex;

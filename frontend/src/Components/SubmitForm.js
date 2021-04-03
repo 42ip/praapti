@@ -59,7 +59,7 @@ class SubmitForm extends Component {
     render() {
     
       return (
-        <div>
+        <div style={{minHeight:'75vh'}}>
             <h3>
               Upload Files
             </h3>
