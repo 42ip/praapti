@@ -39,8 +39,8 @@ function Map({viewport,role,data,setData}) {
           accessToken={"pk.eyJ1IjoidGlydGgwIiwiYSI6ImNrbjB0NHY1aTA5bTkycG56NXZhdXl4MGkifQ.1ywfUyHehaszWb-Q0tlb3g"}
           
         >
-          
-          {role!=="Employee"?<><Draw data={data} onChange={(data) => setData(data)}/> 
+          <Draw data={data} onChange={(data) => setData(data)}/>
+          {role!=="Employee"?<> 
           <button onClick={addFields} className={classes.addBtn}>Add fields</button> </>:null}
         </MapGL>
             {role !== "Employee" ?
@@ -50,11 +50,6 @@ function Map({viewport,role,data,setData}) {
              IMS
              </button>
             </Link>
-            <Link to="/SF">
-             <button type="button" className={classes.sfBtn}>
-             Submit Details
-             </button>
-             </Link>
              </> : <Link to="/profile">
              <button type="button" className={classes.imsBtn}>
              Profile Page

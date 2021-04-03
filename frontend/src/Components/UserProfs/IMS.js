@@ -1,10 +1,30 @@
-import { Component } from 'react';
+import React,{ useState,useRef } from 'react';
 import { Card,Button} from 'react-bootstrap';
 import classes from './IMS.module.css';
 import { Link } from 'react-router-dom';
-export default class IMS extends Component {
-    render() {
+import Modal from '../Modal/Modal'
+export default function IMS(){
+
+        const [modal,setModal] = useState(false);
+        const handleModal = ()=>{
+            setModal(!modal);
+        }
+        const handleSubmit = ()=>{
+            console.log("lol")
+        }
+        const loc = useRef();
+        const state = useRef();
+        const employees = useRef();
+        const taxes = useRef();
+        const prevYield = useRef();
+        const img = useRef();
+
+        const prop = [loc,state,employees,taxes,prevYield,img];
+        const labels = ["Location","State","Number of Employees","Taxes Due","Previous Yield","Image"];
+        
         return (
+            <>
+            {!modal?
         <div class="IMS_body">
                 <h1 style={{color:'#52734D'}} className={classes.Title}>Inventory management system</h1>
                 <div className={classes.cards}>
@@ -59,7 +79,14 @@ export default class IMS extends Component {
                         </Card.Footer> 
                         </div>
                 </div>
-            </div>
+                <Button variant="primary" onClick={handleModal} className={classes.addBtn}>Add Field</Button>
+            </div>:<Modal
+                prop = {prop}
+                labels = {labels}
+                handleSubmit={handleSubmit}
+                handleClose = {handleModal}
+            />}
+            </>
         );
-    }
+    
 }

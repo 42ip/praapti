@@ -9,7 +9,7 @@
     margin-left: 50vw;
     margin-top: calc(25vh - 85px);
     width: 40%;
-    height: 50vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     padding: 3rem;
