@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 export default class Navbar extends Component {
     render() {
         return (
-            <div class="navbar">
+            <div className="navbar">
+                <Link to="/" className="homelogo">
                 <img src={logo} alt="logo" />
+                </Link>
                 <Link to="/reg">
                 <button type="button" className="button-one">
                      Register

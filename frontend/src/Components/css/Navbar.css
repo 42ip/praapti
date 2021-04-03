@@ -37,9 +37,13 @@
     box-shadow: 0 0 10px #5b8a72, 0 0 30px #5b8a72, 0 0 60px #5b8a72;
 }
 
-.App-header .navbar img {
+.App-header .navbar .homelogo {
     margin-right: auto;
     margin-top: 2px;
     margin-left: 20px;
     height: 70px;
+}
+
+.App-header .navbar .homelogo img {
+    height: 100%;
 }
