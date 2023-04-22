@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^12.1.10",
     "@urbica/react-map-gl": "^1.14.2",
     "@urbica/react-map-gl-draw": "^0.3.5",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bootstrap": "^4.6.0",
     "mapbox-gl": "^2.2.0",
     "mime": "^1.6.0",
